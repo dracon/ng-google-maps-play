@@ -1,5 +1,45 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div class="col-md-12">
+    <h2>Lek med Google maps og angular-google-maps</h2>
+    <script type="text/ng-template" id="searchbox.tpl.html">
+        <input class="searchbox" type="text" placeholder="Search Box">
+    </script>
+    <ui-gmap-google-map center="map.center"
+                        zoom="map.zoom" draggable="true" options="map.options"
+                        events="map.events">
+        <ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
+        <ui-gmap-layer type="BicyclingLayer" show="bLayerShow"></ui-gmap-layer>
+        <ui-gmap-layer type="TrafficLayer" show="tLayerShow"></ui-gmap-layer>
+        <!--doCluster="map.doCluster"-->
+        <ui-gmap-markers ng-if="map.showMarkers"
+                         doCluster="map.doCluster"
+                         models="searchResults.results"
+                         coords="'coords'"
+                         idkey="'key'"
+                         chunk="false"
+                         cleanchunk="false"
+                         control="map.markerControl"
+        ></ui-gmap-markers>
+    </ui-gmap-google-map>
+
+    <div>
+        <div>Layer Select:</div>
+        <input type="checkbox" name="bicyclelayer" id="bucyclelayer" ng-model="bLayerShow">
+        Sykkelveier <br>
+        <input type="checkbox" name="trafficlayer" id="trafficlayer" ng-model="tLayerShow">Traffik
+    </div>
+
+    <button class="btn btn-default" ng-click="reset()">Nullstill</button>
+
+    <button class="btn btn-default" ng-click="addMarkers(5)">Legg til noen markører</button>
+
+    <button class="btn btn-default" ng-click="forceClusterDraw()">Tving a tegne på nytt</button>
+    <br>
+    <button class="btn btn-default" ng-click="toggleCluster()">Toggle Cluster</button>
+    <button class="btn btn-default" ng-click="toggleMarkers()">Toggle Markører</button>
+
+    <p>Antall markører: {{searchResults.results.length}}</p>
+    <p>Vis cluster:{{map.doCluster}}</p>
+    <p>Aktuell zoom:{{map.actualZoom}}</p>
+    <p>Zoom:{{map.zoom}}</p>
+    <p>Vis markører:{{map.showMarkers}}</p>
+</div>

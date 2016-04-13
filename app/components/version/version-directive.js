@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.version.version-directive', [])
+angular.module('b2vGmap1.version.version-directive', [])
 
 .directive('appVersion', ['version', function(version) {
   return function(scope, elm, attrs) {

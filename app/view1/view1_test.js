@@ -1,8 +1,8 @@
 'use strict';
 
-describe('myApp.view1 module', function() {
+describe('b2vGmap1.view1 module', function() {
 
-  beforeEach(module('myApp.view1'));
+  beforeEach(module('b2vGmap1.view1'));
 
   describe('view1 controller', function(){
 

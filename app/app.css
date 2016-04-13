@@ -28,3 +28,14 @@
   content: "";
   padding: 0;
 }
+
+
+.angular-google-map-container { height: 600px; }
+
+
+.searchbox {
+  width: 200px;
+  height: 20px;
+  padding: 2px 5px;
+  margin: 10px;
+}

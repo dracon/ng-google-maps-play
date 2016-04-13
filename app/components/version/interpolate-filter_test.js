@@ -1,7 +1,7 @@
 'use strict';
 
-describe('myApp.version module', function() {
-  beforeEach(module('myApp.version'));
+describe('b2vGmap1.version module', function() {
+  beforeEach(module('b2vGmap1.version'));
 
   describe('interpolate filter', function() {
     beforeEach(module(function($provide) {

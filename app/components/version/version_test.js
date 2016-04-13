@@ -1,7 +1,7 @@
 'use strict';
 
-describe('myApp.version module', function() {
-  beforeEach(module('myApp.version'));
+describe('b2vGmap1.version module', function() {
+  beforeEach(module('b2vGmap1.version'));
 
   describe('version service', function() {
     it('should return current version', inject(function(version) {
